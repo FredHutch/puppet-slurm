@@ -1,0 +1,14 @@
+###############################################################################
+# $Id: munge.sysconfig 507 2006-05-11 20:28:55Z dun $
+###############################################################################
+
+##
+# Pass additional command-line options to the daemon.
+##
+# OPTIONS="--force --key-file /etc/munge/munged.key --num-threads 1"
+OPTIONS="--force"
+
+##
+# Adjust the scheduling priority of the daemon.
+##
+# NICE=

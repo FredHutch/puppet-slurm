@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "export TMPDIR=/loc/scratch/${SLURM_JOB_ID}"
+echo "export SCRATCH_LOCAL=/loc/scratch/${SLURM_JOB_ID}"
+echo "export SCRATCH=/fh/scratch/<%= @ClusterName %>/${SLURM_JOB_ID}"
+
+

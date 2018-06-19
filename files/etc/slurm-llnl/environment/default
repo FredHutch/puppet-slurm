@@ -1,0 +1,4 @@
+#
+# Set TMPDIR to the scratch directory
+TMPDIR = /loc/scratch/${SLURM_JOBID}
+

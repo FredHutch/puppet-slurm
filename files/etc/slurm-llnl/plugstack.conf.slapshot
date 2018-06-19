@@ -1,0 +1,5 @@
+#
+# Include the use-env plugin to allow us to 
+# set TMPDIR for interactive jobs
+required /usr/lib/slurm/use-env.so
+#required /usr/lib/slurm/x11.so helpertask_cmd=2>/tmp/x11_plugin.log

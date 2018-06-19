@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SCRATCH_ROOT=/loc/scratch
+NETSCRATCH=/fh/scratch/<%= @ClusterName %>
+
+if [ $SLURM_JOB_ID -gt 0 ] && [ -d $SCRATCH_ROOT/$SLURM_JOB_ID ]
+then
+	/bin/rm -rf $SCRATCH_ROOT/$SLURM_JOB_ID
+fi
+
+if [ $SLURM_JOB_ID -gt 0 ] && [ -d $NETSCRATCH/$SLURM_JOB_ID ]
+then
+	/bin/rm -rf $NETSCRATCH/$SLURM_JOB_ID
+fi
+
+echo "removed scratch directories"
+
+exit 0
+

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+SCRATCH_ROOT=/loc/scratch
+NETSCRATCH=/fh/scratch/<%= @ClusterName %>
+
+if [ -d "$SCRATCH_ROOT" ]; then
+    SCRATCH_DIR="$SCRATCH_ROOT/$SLURM_JOB_ID"
+    if [ ! -d "$SCRATCH_DIR" ]; then
+        sudo /bin/mkdir -p $SCRATCH_DIR
+        sudo /bin/chown $SLURM_JOB_USER $SCRATCH_DIR
+    fi
+fi
+if [ -d "$NETSCRATCH" ]; then
+    SCRATCH_DIR="$NETSCRATCH/$SLURM_JOB_ID"
+    if [ ! -d "$SCRATCH_DIR" ]; then
+        sudo /bin/mkdir -p $SCRATCH_DIR
+        sudo /bin/chown $SLURM_JOB_USER $SCRATCH_DIR
+    fi
+fi
+
+echo "created scratch directories"
+
+exit $?
